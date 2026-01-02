@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matteo Roselli - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="avatar-wrap">
+        <img class="avatar" src="img/profilo.jpg" alt="Foto profilo di Matteo" loading="lazy"
+             onerror="this.style.display='none'; this.parentElement.classList.add('avatar-fallback');">
+        <div class="avatar-fallback-text">MR</div>
+      </div>
+
+      <div>
+        <h1 class="fade-in">Matteo Roselli</h1>
+        <p class="subtitle fade-in delay-1">Grafico / Sviluppatore / Studente</p>
+
+        <div class="cta fade-in delay-2">
+          <a class="btn" href="#progetti">Vedi progetti</a>
+          <a class="btn btn-ghost" href="#contatti">Contattami</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="topnav">
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#competenze">Competenze</a>
+    <a href="#progetti">Progetti</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+
+  <main>
+    <section id="chi-sono" class="section reveal">
+      <h2>Chi sono</h2>
+      <p>
+        Ciao! Sono Matteo e questo è il mio portfolio personale.
+        Qui trovi i miei progetti, le mie competenze e come contattarmi.
+      </p>
+
+      <div class="chips">
+        <span class="chip">Photoshop</span>
+        <span class="chip">Illustrator</span>
+        <span class="chip">InDesign</span>
+        <span class="chip">Autocad 2D/3D</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+      </div>
+    </section>
+
+    <section id="competenze" class="section reveal">
+  <div class="section-head">
+    <h2>Competenze</h2>
+    <p class="muted">Strumenti e aree in cui lavoro più spesso</p>
+  </div>
+
+  <div class="skills-grid">
+    <article class="skill-card hover-lift">
+      <div class="skill-top">
+        <span class="skill-dot" aria-hidden="true"></span>
+        <h3>Grafica</h3>
+      </div>
+      <p class="muted">Fotoritocco, compositing, ottimizzazione immagini.</p>
+      <div class="chips">
+        <span class="chip">Photoshop</span>
+        <span class="chip">Color correction</span>
+      </div>
+    </article>
+
+    <article class="skill-card hover-lift">
+      <div class="skill-top">
+        <span class="skill-dot" aria-hidden="true"></span>
+        <h3>Grafica Avanzata</h3>
+      </div>
+      <p class="muted">Branding, vettoriale, impaginazione e layout puliti.</p>
+      <div class="chips">
+        <span class="chip">Illustrator</span>
+        <span class="chip">InDesign</span>
+        <span class="chip">Branding</span>
+      </div>
+    </article>
+
+    <article class="skill-card hover-lift">
+      <div class="skill-top">
+        <span class="skill-dot" aria-hidden="true"></span>
+        <h3>CAD</h3>
+      </div>
+      <p class="muted">Disegno tecnico, precisione e gestione tavole.</p>
+      <div class="chips">
+        <span class="chip">Disegno 2D</span>
+        <span class="chip">Disegno 3D</span>
+      </div>
+    </article>
+
+    <article class="skill-card hover-lift">
+      <div class="skill-top">
+        <span class="skill-dot" aria-hidden="true"></span>
+        <h3>Web base</h3>
+      </div>
+      <p class="muted">Layout responsive e cura del dettaglio.</p>
+      <div class="chips">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    <section id="progetti" class="section reveal">
+      <div class="section-head">
+        <h2>Progetti</h2>
+        <p class="muted">Una selezione dei miei lavori più recenti.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card hover-lift">
+          <h3>Progetto 1</h3>
+          <p>Descrizione del progetto. Cosa hai fatto, con che tecnologie, risultato.</p>
+          <div class="card-links">
+  <a href="pdf/attestato-grafica.pdf" target="_blank">Vedi lavoro</a>
+</div>
+        </article>
+
+        <article class="card hover-lift">
+          <h3>Progetto 2</h3>
+          <p>Descrizione del progetto. Cosa hai imparato o migliorato.</p>
+          <div class="card-links">
+  <a href="pdf/attestato-grafica.pdf" target="_blank">Vedi lavoro</a>
+</div>
+        </article>
+
+        <article class="card hover-lift">
+          <h3>Progetto 3</h3>
+          <p>Un terzo progetto per riempire la griglia (puoi duplicare o modificare).</p>
+          <div class="card-links">
+  <a href="pdf/attestato-grafica.pdf" target="_blank">Vedi lavoro</a>
+</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="attestati" class="section reveal">
+  <div class="section-head">
+    <h2>Attestati</h2>
+    <p class="muted">Certificazioni e corsi di formazione completati</p>
+  </div>
+
+  <div class="grid">
+    <article class="card hover-lift cert-card">
+      <div class="cert-head">
+        <img class="cert-icon" src="img/icons/grafica.svg" alt="Icona grafica" loading="lazy">
+        <div>
+          <h3>Attestato di Grafica</h3>
+          <p class="muted">Fondamenti di grafica digitale e comunicazione visiva.</p>
+        </div>
+      </div>
+      <div class="card-links">
+        <button class="linklike preview-btn" data-pdf="pdf/attestato-grafica.pdf">Anteprima</button>
+        <a href="pdf/attestato-grafica.pdf" target="_blank" rel="noreferrer">Apri</a>
+      </div>
+    </article>
+
+    <article class="card hover-lift cert-card">
+      <div class="cert-head">
+        <img class="cert-icon" src="img/icons/grafica-avanzata.svg" alt="Icona grafica avanzata" loading="lazy">
+        <div>
+          <h3>Grafica Avanzata</h3>
+          <p class="muted">Tecniche avanzate di progettazione grafica e visual design.</p>
+        </div>
+      </div>
+      <div class="card-links">
+        <button class="linklike preview-btn" data-pdf="pdf/attestato-grafica-avanzata.pdf">Anteprima</button>
+        <a href="pdf/attestato-grafica-avanzata.pdf" target="_blank" rel="noreferrer">Apri</a>
+      </div>
+    </article>
+
+    <article class="card hover-lift cert-card">
+      <div class="cert-head">
+        <img class="cert-icon" src="img/icons/cad.svg" alt="Icona CAD" loading="lazy">
+        <div>
+          <h3>EIPASS CAD</h3>
+          <p class="muted">Certificazione sull’uso di software CAD per il disegno tecnico.</p>
+        </div>
+      </div>
+      <div class="card-links">
+        <button class="linklike preview-btn" data-pdf="pdf/attestato-eipass-cad.pdf">Anteprima</button>
+        <a href="pdf/attestato-eipass-cad.pdf" target="_blank" rel="noreferrer">Apri</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- MODAL ANTEPRIMA PDF -->
+<div id="pdfModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close="true"></div>
+
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Anteprima attestato">
+    <div class="modal-top">
+      <strong id="modalTitle">Anteprima PDF</strong>
+      <button id="modalClose" class="icon-btn" aria-label="Chiudi anteprima">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <!-- L'iframe mostra il PDF nel browser -->
+      <iframe id="pdfFrame" title="Anteprima PDF" loading="lazy"></iframe>
+
+      <p class="modal-fallback">
+        Se l’anteprima non si vede, usa:
+        <a id="pdfOpenLink" href="#" target="_blank" rel="noreferrer">Apri PDF</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+    <section id="contatti" class="contact-full">
+  <div class="contact-inner">
+
+    <h2>Contattami</h2>
+    <p class="contact-subtitle">
+      Scrivimi per collaborazioni, informazioni o progetti.
+    </p>
+
+    <div class="contact-actions">
+      <a class="contact-pill email-pill"
+   href="https://mail.google.com/mail/?view=cm&to=matteoroselli10@gmail.com"
+   target="_blank"
+   rel="noreferrer">
+
+  <img class="social-icon" src="img/icons/mail.svg" alt="" aria-hidden="true">
+
+  <span class="email-text">matteoroselli10@gmail.com</span>
+
+  <button class="copy-btn" type="button" aria-label="Copia email">
+    Copia
+  </button>
+
+  <span class="copy-feedback" aria-hidden="true">✓</span>
+
+  <span class="tooltip">Clicca per scrivere</span>
+</a>
+
+
+
+      <a class="contact-pill ig-pill"
+   href="https://www.instagram.com/teo.roselli"
+   target="_blank"
+   rel="noreferrer">
+
+  <img class="social-icon" src="img/icons/instagram.svg" alt="" aria-hidden="true">
+  <span class="ig-text">@teo.roselli</span>
+
+  <button class="ig-copy-btn" type="button" aria-label="Copia link Instagram">
+    Copia
+  </button>
+
+  <span class="ig-feedback" aria-hidden="true">✓</span>
+</a>
+
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 - Matteo Roselli</p>
+  </footer>
+
+  <script>
+  // --- Scroll reveal (già presente) ---
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // --- PDF Preview Modal ---
+  const modal = document.getElementById("pdfModal");
+  const frame = document.getElementById("pdfFrame");
+  const openLink = document.getElementById("pdfOpenLink");
+  const closeBtn = document.getElementById("modalClose");
+
+  function openModal(pdfUrl, title = "Anteprima PDF"){
+    document.getElementById("modalTitle").textContent = title;
+
+    // Carica il PDF nell'iframe
+    frame.src = pdfUrl;
+    openLink.href = pdfUrl;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+
+    // blocca scroll pagina dietro
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    frame.src = ""; // scarica il pdf per alleggerire
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".preview-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const pdfUrl = btn.dataset.pdf;
+      const cardTitle = btn.closest(".card")?.querySelector("h3")?.textContent || "Anteprima PDF";
+      openModal(pdfUrl, cardTitle);
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.dataset.close === "true") closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
+
+  // Spotlight che segue il mouse
+  window.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    document.documentElement.style.setProperty("--mx", x + "%");
+    document.documentElement.style.setProperty("--my", y + "%");
+  }, { passive: true });
+</script>
+
+<script>
+  const copyBtn = document.querySelector('.copy-btn');
+  const emailText = document.querySelector('.email-text');
+  const feedback = document.querySelector('.copy-feedback');
+
+  copyBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // evita apertura Gmail quando clicchi "Copia"
+    const email = emailText.textContent.trim();
+
+    navigator.clipboard.writeText(email).then(() => {
+      // testo bottone
+      copyBtn.textContent = "Copiato!";
+      clearTimeout(copyBtn._t);
+      copyBtn._t = setTimeout(() => copyBtn.textContent = "Copia", 1400);
+
+      // micro animazioni
+      copyBtn.classList.remove("bump");
+      void copyBtn.offsetWidth; // reset animazione
+      copyBtn.classList.add("bump");
+
+      feedback.classList.remove("show");
+      void feedback.offsetWidth; // reset animazione
+      feedback.classList.add("show");
+    });
+  });
+</script>
+
+<script>
+  // Copia link Instagram + feedback
+  const igCopyBtn = document.querySelector('.ig-copy-btn');
+  const igPill = document.querySelector('.ig-pill');
+  const igFeedback = document.querySelector('.ig-feedback');
+
+  igCopyBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // evita apertura instagram quando clicchi "Copia"
+    const url = igPill.getAttribute('href');
+
+    navigator.clipboard.writeText(url).then(() => {
+      igCopyBtn.textContent = "Copiato!";
+      clearTimeout(igCopyBtn._t);
+      igCopyBtn._t = setTimeout(() => igCopyBtn.textContent = "Copia", 1400);
+
+      igCopyBtn.classList.remove("bump");
+      void igCopyBtn.offsetWidth;
+      igCopyBtn.classList.add("bump");
+
+      igFeedback.classList.remove("show");
+      void igFeedback.offsetWidth;
+      igFeedback.classList.add("show");
+
+      if (navigator.vibrate) navigator.vibrate(20);
+    });
+  });
+
+  // Feedback anche quando APRI Instagram (click sulla pill, non sul bottone)
+  igPill.addEventListener('click', (e) => {
+    if (e.target.closest('.ig-copy-btn')) return; // se clicchi copia, non qui
+    igFeedback.classList.remove("show");
+    void igFeedback.offsetWidth;
+    igFeedback.classList.add("show");
+  });
+</script>
+
+</body>
+</html>
+
