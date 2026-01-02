@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none">
+  <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- scintille / avanzata -->
+    <path d="M12 2l.8 2.6L15.4 6l-2.6.8L12 9.4l-.8-2.6L8.6 6l2.6-.8L12 2z"></path>
+    <path d="M19 10l.6 1.9L21.5 12l-1.9.6L19 14.5l-.6-1.9L16.5 12l1.9-.6L19 10z"></path>
+    <!-- penna -->
+    <path d="M4 20l4.8-1.2L19.5 8.1a1.9 1.9 0 0 0 0-2.7l-.9-.9a1.9 1.9 0 0 0-2.7 0L5.2 15.1 4 20z"></path>
+    <path d="M13.2 6.8l4 4"></path>
+    <!-- linea base -->
+    <path d="M4 22h16"></path>
+  </g>
+</svg>
