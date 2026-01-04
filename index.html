@@ -244,8 +244,6 @@
     Copia
   </button>
 
-  <span class="copy-feedback" aria-hidden="true">✓</span>
-
   <span class="tooltip">Clicca per scrivere</span>
 </a>
 
@@ -263,7 +261,6 @@
     Copia
   </button>
 
-  <span class="ig-feedback" aria-hidden="true">✓</span>
 </a>
 
     </div>
@@ -393,14 +390,6 @@
 
       if (navigator.vibrate) navigator.vibrate(20);
     });
-  });
-
-  // Feedback anche quando APRI Instagram (click sulla pill, non sul bottone)
-  igPill.addEventListener('click', (e) => {
-    if (e.target.closest('.ig-copy-btn')) return; // se clicchi copia, non qui
-    igFeedback.classList.remove("show");
-    void igFeedback.offsetWidth;
-    igFeedback.classList.add("show");
   });
 </script>
 
