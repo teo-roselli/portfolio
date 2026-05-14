@@ -730,3 +730,168 @@ body::before{
 .ig-copy-btn.bump{
   animation: bump .18s cubic-bezier(.2,.8,.2,1);
 }
+
+
+/* progetti */
+
+.projects-grid{
+  grid-template-columns: 1fr;
+}
+
+.project-card{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-gallery{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.project-main-thumb,
+.project-side-thumbs img,
+.thumb-more img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  border: 1px solid rgba(232,234,240,.08);
+}
+
+.project-main-thumb{
+  min-height: 180px;
+  max-height: 220px;
+}
+
+.project-side-thumbs{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.project-side-thumbs img,
+.thumb-more{
+  min-height: 85px;
+  max-height: 105px;
+}
+
+.thumb-more{
+  position: relative;
+}
+
+.thumb-more img{
+  height: 100%;
+  filter: brightness(.62);
+}
+
+.thumb-more span{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(0,0,0,.24);
+  border-radius: 12px;
+}
+
+.project-modal-box{
+  width: min(1100px, calc(100% - 24px));
+  max-height: 90vh;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.project-modal-body{
+  position: relative;
+  min-height: 0;
+  padding: 18px;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.project-modal-image{
+  display: block;
+  max-width: 100%;
+  max-height: calc(90vh - 140px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(232,234,240,.10);
+  background: rgba(0,0,0,.18);
+}
+
+.project-modal-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px 18px;
+  color: var(--muted);
+}
+
+.project-modal-footer a{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.project-modal-footer a:hover{
+  text-decoration: underline;
+}
+
+.gallery-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(232,234,240,.12);
+  background: rgba(15,17,21,.72);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.4rem;
+  z-index: 2;
+}
+
+.gallery-nav.prev{ left: 18px; }
+.gallery-nav.next{ right: 18px; }
+
+.gallery-nav:hover{
+  background: rgba(232,234,240,.10);
+}
+
+@media (min-width: 720px){
+  .projects-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px){
+  .project-gallery{
+    grid-template-columns: 1fr;
+  }
+
+  .project-side-thumbs{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .gallery-nav.prev{ left: 8px; }
+  .gallery-nav.next{ right: 8px; }
+
+  .project-modal-footer{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

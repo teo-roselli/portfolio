@@ -85,30 +85,73 @@
 </section>
 
 
-    <section id="progetti" class="section reveal">
-      <div class="section-head">
-        <h2>Progetti</h2>
-        <p class="muted">Una selezione dei miei lavori più recenti.</p>
+<section id="progetti" class="section reveal">
+  <div class="section-head">
+    <h2>Progetti</h2>
+    <p class="muted">Una selezione dei miei lavori più recenti.</p>
+  </div>
+
+  <div class="grid projects-grid">
+
+    <article class="card hover-lift project-card">
+      <div class="project-gallery">
+        <img src="img/wolf-charge.png" alt="Logo Wolf Charge" class="project-main-thumb" loading="lazy">
+
+        <div class="project-side-thumbs">
+          <img src="img/wolf-charge-2.png" alt="Anteprima Wolf Charge 2" loading="lazy">
+          <div class="thumb-more">
+            <img src="img/wolf-charge-3.png" alt="Anteprima Wolf Charge 3" loading="lazy">
+            <span>+2</span>
+          </div>
+        </div>
       </div>
 
-      <div class="grid">
-        <article class="card hover-lift">
-          <h3>Podcast</h3>
-          <p>Qui sotto si trova la realizzazione di una copertina per il podcast di una scuola con eventuale pulsante redirect al podcast stesso.</p>
-          <div class="card-links">
-  <a href="img/podcast-scuola.png" target="_blank">Vedi lavoro</a>
-</div>
-        </article>
+      <h3>Wolf Charge</h3>
+      <p>Concept grafico per una marca ipotetica di energy drink, con logo, cover e slogan coordinati.</p>
 
-        <article class="card hover-lift">
-          <h3>Wolf Charge</h3>
-          <p>Qui sotto si trova la realizzazione di un nuovo logo per un ipotetica nuova marca di energy drink, con anche la copertina e lo slogan.</p>
-          <div class="card-links">
-  <a href="img/wolf-charge.png" target="_blank">Vedi lavoro</a>
-</div>
-        </article>
+      <div class="card-links">
+        <button
+          class="linklike project-preview-btn"
+          data-title="Wolf Charge"
+          data-images='[
+            "img/wolf-charge.png",
+            "img/wolf-charge-2.png",
+            "img/wolf-charge-3.png",
+            "img/wolf-charge-4.png",
+            "img/wolf-charge-5.png"
+          ]'>
+          Anteprima
+        </button>
+
+        <a href="img/wolf-charge.png" target="_blank" rel="noopener noreferrer">Apri</a>
       </div>
-    </section>
+    </article>
+  </div>
+</section>
+
+<div id="projectModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-project-close="true"></div>
+
+  <div class="modal-box project-modal-box" role="dialog" aria-modal="true" aria-label="Anteprima progetto">
+    <div class="modal-top">
+      <strong id="projectModalTitle">Anteprima progetto</strong>
+      <button id="projectModalClose" class="icon-btn" aria-label="Chiudi anteprima progetto">✕</button>
+    </div>
+
+    <div class="project-modal-body">
+      <button class="gallery-nav prev" id="prevProjectImage" aria-label="Immagine precedente">‹</button>
+
+      <img id="projectModalImage" src="" alt="Anteprima progetto" class="project-modal-image">
+
+      <button class="gallery-nav next" id="nextProjectImage" aria-label="Immagine successiva">›</button>
+    </div>
+
+    <div class="project-modal-footer">
+      <span id="projectImageCounter">1 / 1</span>
+      <a id="projectOpenImage" href="#" target="_blank" rel="noopener noreferrer">Apri immagine</a>
+    </div>
+  </div>
+</div>
 
     <section id="attestati" class="section reveal">
   <div class="section-head">
@@ -339,6 +382,79 @@
 
       if (navigator.vibrate) navigator.vibrate(20);
     });
+  });
+</script>
+
+<script>
+  const projectModal = document.getElementById("projectModal");
+  const projectModalImage = document.getElementById("projectModalImage");
+  const projectModalTitle = document.getElementById("projectModalTitle");
+  const projectImageCounter = document.getElementById("projectImageCounter");
+  const projectOpenImage = document.getElementById("projectOpenImage");
+  const projectModalClose = document.getElementById("projectModalClose");
+  const prevProjectImage = document.getElementById("prevProjectImage");
+  const nextProjectImage = document.getElementById("nextProjectImage");
+
+  let currentProjectImages = [];
+  let currentProjectIndex = 0;
+
+  function updateProjectModal() {
+    const currentSrc = currentProjectImages[currentProjectIndex];
+    projectModalImage.src = currentSrc;
+    projectOpenImage.href = currentSrc;
+    projectImageCounter.textContent = `${currentProjectIndex + 1} / ${currentProjectImages.length}`;
+  }
+
+  function openProjectModal(images, title = "Anteprima progetto") {
+    currentProjectImages = images;
+    currentProjectIndex = 0;
+    projectModalTitle.textContent = title;
+    updateProjectModal();
+
+    projectModal.classList.add("open");
+    projectModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProjectModal() {
+    projectModal.classList.remove("open");
+    projectModal.setAttribute("aria-hidden", "true");
+    projectModalImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".project-preview-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const images = JSON.parse(btn.dataset.images);
+      const title = btn.dataset.title || "Anteprima progetto";
+      openProjectModal(images, title);
+    });
+  });
+
+  prevProjectImage.addEventListener("click", () => {
+    currentProjectIndex =
+      (currentProjectIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+    updateProjectModal();
+  });
+
+  nextProjectImage.addEventListener("click", () => {
+    currentProjectIndex =
+      (currentProjectIndex + 1) % currentProjectImages.length;
+    updateProjectModal();
+  });
+
+  projectModalClose.addEventListener("click", closeProjectModal);
+
+  projectModal.addEventListener("click", (e) => {
+    if (e.target.dataset.projectClose === "true") closeProjectModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!projectModal.classList.contains("open")) return;
+
+    if (e.key === "Escape") closeProjectModal();
+    if (e.key === "ArrowLeft") prevProjectImage.click();
+    if (e.key === "ArrowRight") nextProjectImage.click();
   });
 </script>
 
